@@ -10,6 +10,15 @@ package natural
 // Dies ist eine Hilfsfunktion, die genutzt werden soll,
 // um den Gesamt-String einer Zahl zusammenzusetzen.
 func DigitString100(digit int) string {
-	// TODO
+	name := []string{"", "ein", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun"}
+	for i, ef := range name {
+		if i == digit {
+			if i > 0 {
+				ef += "hundert"
+			}
+			return ef
+
+		}
+	}
 	return ""
 }

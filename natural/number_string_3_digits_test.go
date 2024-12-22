@@ -68,3 +68,14 @@ func ExampleNumberString3Digits() {
 	// achthundertzweiundfünfzig
 	// neunhundertneunundneunzig
 }
+
+func ExampleTestNum() {
+	fmt.Println(eins_zwölf(1))
+	fmt.Println(eins_zwölf(10))
+	fmt.Println(eins_zwölf(12))
+	fmt.Println(eins_zwölf(9))
+	fmt.Println(eins_zwölf(111))
+	fmt.Println(eins_zwölf(11))
+	//Output:
+	//
+}
