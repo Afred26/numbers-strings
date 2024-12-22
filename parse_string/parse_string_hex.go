@@ -8,7 +8,7 @@ import (
 
 // ParseStringDecimal erwartet einen String, der eine Hexadezimalzahl repräsentiert, und liefert die zugehörige Zahl.
 // Ist der String kein gültiger Wert, wird -1 zurückgegeben.
-func ParseStringHexadecimal(s string) int {
+func ParseStringHexadecimal(s string, b int) int {
 	var n int
 	var m int
 	value := strings.Split(s, "")
@@ -18,7 +18,7 @@ func ParseStringHexadecimal(s string) int {
 		if m == -1 {
 			return -1
 		}
-		n += int(math.Pow(16, float64(i))) * ParseDigit(ef)
+		n += int(math.Pow(float64(b), float64(i))) * ParseDigit(ef)
 	}
 
 	return n

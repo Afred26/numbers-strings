@@ -1,17 +1,15 @@
 package parse_string
 
-import "strings"
+import (
+	"strconv"
+)
 
 // ParseString erwartet einen String, der entweder eine Dezimal- oder eine Hexadezimalzahl repräsentiert, und liefert die zugehörige Zahl.
 // Ist der String kein gültiger Wert, wird -1 zurückgegeben.
-func ParseString(s string) int {
-	bevor, after, _ := strings.Cut(s, " ")
-	if bevor == "0x" {
-		return ParseStringHexadecimal(after)
+func ParseString(s string) int64 {
+	if n, err := strconv.ParseInt(s, 0, 0); err == nil {
+		return n
+	} else {
+		return -1
 	}
-	if bevor == "0" {
-		return ParseStringDecimal(after)
-	}
-
-	return -1
 }
